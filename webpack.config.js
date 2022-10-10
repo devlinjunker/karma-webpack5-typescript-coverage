@@ -33,7 +33,8 @@ module.exports = {
       
       {
         test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
-        use: ['@ngtools/webpack'],
+        exclude: /spec\.ts$/,
+        use: ["@jsdevtools/coverage-istanbul-loader", '@ngtools/webpack'],
       },
 
       // For HTML templates.
@@ -46,11 +47,6 @@ module.exports = {
         },
       },
 
-      {
-        test: /\.[cm]?jsx?$/,
-        enforce: 'pre',
-        loader: 'source-map-loader',
-      },
     ],
   },
 

@@ -20,7 +20,7 @@ module.exports = async (config) => {
       require('karma-chai'),
       require('karma-webpack'),
       require('karma-chrome-launcher'),
-      require('karma-coverage'),
+      require('karma-coverage-istanbul-reporter'),
     ],
     
     customLaunchers: {
@@ -47,30 +47,23 @@ module.exports = async (config) => {
     port: 9876,
     preprocessors: {
       ['**/*.ts']: ['webpack'],
-      ['**/!(*.spec).ts']: ['webpack', 'coverage'],
+      ['**/!(*.spec).ts']: ['webpack'],
     },
 
 
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'coverage-istanbul'],
     
     singleRun: true, // config.debug
 
     webpack: common,
 
-    coverageReporter: {
-      // specify a common output directory
-      dir: 'coverage',
-      reporters: [
-        // reporters not supporting the `file` property
-        { type: 'html', subdir: '.' },
-
-        // reporters supporting the `file` property, use `subdir` to directly
-        // output them in the `dir` directory
-        { type: 'cobertura', subdir: '.', file: 'cobertura.xml' },
-        
-        { type: 'text-summary', },
-        { type: 'json', subdir: '.', file: 'coverage.json' },
-      ]
-    },
+    coverageIstanbulReporter: {
+      reports: [ 'html', 'text-summary', 'lcovonly' ],
+      dir: path.join(__dirname, 'coverage'),
+      fixWebpackSourcePaths: true,
+      'report-config': {
+        html: { outdir: 'html' }
+      }
+    }
   });
 };

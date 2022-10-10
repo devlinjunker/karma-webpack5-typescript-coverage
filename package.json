@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@jsdevtools/coverage-istanbul-loader": "^3.0.5",
+    "@ngtools/webpack": "^14.2.5",
     "@types/mocha": "^10.0.0",
     "chai": "^4.3.6",
     "express": "^4.18.1",
@@ -18,22 +20,18 @@
     "karma": "^6.4.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.1",
-    "karma-coverage": "^2.2.0",
+    "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-mocha": "^2.0.1",
-    "karma-source-map-support": "^1.4.0",
     "karma-webpack": "^5.0.0",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.20",
     "puppeteer": "^18.2.0",
-    "remap-istanbul": "^0.13.0",
-    "source-map-loader": "^4.0.0",
     "stream": "^0.0.2",
     "util": "^0.12.4",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "zone.js": "^0.11.8"
+    "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@ngtools/webpack": "^14.2.4"
+    "zone.js": "^0.11.8"
   }
 }

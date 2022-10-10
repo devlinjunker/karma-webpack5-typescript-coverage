@@ -12,4 +12,9 @@ describe('math.service', () => {
   it('should add', () => {
     expect(mathService.add(1, 2)).to.equal(3);
   })
+  
+  // Uncomment to see coverage change
+  // it('should subtract', () => {
+  //   expect(mathService.subtract(1, 2)).to.equal(-1);
+  // })
 })
